@@ -18,7 +18,7 @@ and a passphrase you choose (`PULUMI_CONFIG_PASSPHRASE`).
 | 5 | Deploy to Azure | [chapters/05-deploy-to-azure](chapters/05-deploy-to-azure) |
 | 6 | Component Resources | [chapters/06-component-resources](chapters/06-component-resources) |
 | 7 | State, Import and Refactoring | [chapters/07-state-import-and-refactoring](chapters/07-state-import-and-refactoring) |
-| 8 | Secrets and Environments with Pulumi ESC | coming soon |
+| 8 | Secrets and Environments with Pulumi ESC | [chapters/08-secrets-and-environments-with-pulumi-esc](chapters/08-secrets-and-environments-with-pulumi-esc) |
 | 9 | Test Infrastructure Code | [chapters/09-test-infrastructure-code](chapters/09-test-infrastructure-code) |
 | 10 | Kubernetes with Pulumi | [chapters/10-kubernetes-with-pulumi](chapters/10-kubernetes-with-pulumi) |
 | 11 | The Automation API | [chapters/11-the-automation-api](chapters/11-the-automation-api) |

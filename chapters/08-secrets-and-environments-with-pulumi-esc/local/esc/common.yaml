@@ -1,0 +1,7 @@
+values:
+  app:
+    name: Guestbook
+    memoryMb: 128
+  pulumiConfig:
+    limits:
+      memoryMb: ${app.memoryMb}

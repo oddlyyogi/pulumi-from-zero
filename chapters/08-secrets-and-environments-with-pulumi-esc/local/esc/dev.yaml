@@ -1,0 +1,9 @@
+imports:
+  - guestbook/common
+values:
+  app:
+    stage: dev
+    port: 8085
+  pulumiConfig:
+    port: ${app.port}
+    title: ${app.name} (${app.stage}, from ESC)
