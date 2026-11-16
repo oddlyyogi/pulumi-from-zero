@@ -1,6 +1,7 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as docker from "@pulumi/docker";
 import { Guestbook } from "./guestbook";
+import { restartUnlessStopped } from "./transforms";
 
 const config = new pulumi.Config();
 const port = config.requireNumber("port");
@@ -35,11 +36,7 @@ const previewApp = new Guestbook("preview", {
   title: `${title}, preview`,
   memoryMb: 64,
 }, {
-  transforms: [(args) =>
-    args.type === "docker:index/container:Container"
-      ? { props: { ...args.props, restart: "unless-stopped" },
-          opts: args.opts }
-      : undefined],
+  transforms: [restartUnlessStopped],
 });
 
 const extraNames = config.getObject<string[]>("extraCopies") ?? [];

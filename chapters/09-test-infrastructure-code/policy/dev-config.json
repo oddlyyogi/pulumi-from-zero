@@ -1,0 +1,5 @@
+{
+  "container-memory-cap": { "maxMemoryMb": 1024 },
+  "max-containers": { "max": 5 },
+  "port-range": "disabled"
+}
