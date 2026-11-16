@@ -1,6 +1,6 @@
 import * as pulumi from "@pulumi/pulumi";
 import * as docker from "@pulumi/docker";
-import * as random from "@pulumi/random";
+import { Guestbook } from "./guestbook";
 
 const config = new pulumi.Config();
 const port = config.requireNumber("port");
@@ -14,52 +14,45 @@ const platform = new pulumi.StackReference(
 );
 const networkName = platform.requireOutput("networkName");
 
-const data = new docker.Volume("guestbook-data");
-
-const adminToken = new random.RandomPassword("admin-token", {
-  length: 24,
-  special: false,
-});
-
-const tokenValue = configuredToken ?? adminToken.result;
-
-const image = new docker.Image("guestbook-image", {
+const image = new docker.Image("app-image", {
   imageName: "guestbook-app:v3",
   build: { context: "../app" },
   skipPush: true,
-});
-
-const container = new docker.Container("guestbook-web", {
+}, { aliases: [{ name: "guestbook-image" }] });
+const main = new Guestbook("guestbook", {
   image: image.imageName,
-  ports: [{ internal: 8080, external: port }],
-  memory: limits.memoryMb,
-  envs: [
-    `TITLE=${title}`,
-    pulumi.interpolate`ADMIN_TOKEN=${tokenValue}`,
-  ],
-  networksAdvanced: [{ name: networkName }],
-  volumes: [{ volumeName: data.name, containerPath: "/data" }],
-  labels: [{
-    label: "guestbook.stack",
-    value: stack,
-  }, {
-    label: "guestbook.info",
-    value: pulumi.jsonStringify({
-      network: networkName,
-      port,
-    }),
-  }],
+  network: networkName,
+  port,
+  title,
+  memoryMb: limits.memoryMb,
+  adminToken: configuredToken,
 });
 
-export const containerName = container.name;
-export const containerId = container.id;
-export const url = container.ports.apply(
-  (ports) => `http://localhost:${ports?.[0].external}`,
-);
+const previewApp = new Guestbook("preview", {
+  image: image.imageName,
+  network: networkName,
+  port: port + 1,
+  title: `${title}, preview`,
+  memoryMb: 64,
+}, {
+  transforms: [(args) =>
+    args.type === "docker:index/container:Container"
+      ? { props: { ...args.props, restart: "unless-stopped" },
+          opts: args.opts }
+      : undefined],
+});
 
-export const where =
-  pulumi.interpolate`${container.name} on ${networkName}`;
-export const summary = pulumi
-  .all([container.name, image.imageName])
-  .apply(([name, img]) => `${name} runs ${img}`);
-export const token = tokenValue;
+const extraNames = config.getObject<string[]>("extraCopies") ?? [];
+const extras = extraNames.map((copy, i) => new Guestbook(copy, {
+  image: image.imageName,
+  network: networkName,
+  port: port + 2 + i,
+  title: `${title}, ${copy}`,
+  memoryMb: 64,
+}));
+
+export const url = main.url;
+export const containerName = main.containerName;
+export const token = main.token;
+export const previewUrl = previewApp.url;
+export const extraUrls = extras.map((g) => g.url);
