@@ -1,0 +1,11 @@
+name: guestbook-python
+description: Guestbook on Docker, in Python
+runtime:
+  name: python
+  options:
+    toolchain: pip
+    virtualenv: venv
+config:
+  pulumi:tags:
+    value:
+      pulumi:template: python

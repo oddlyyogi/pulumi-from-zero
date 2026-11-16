@@ -3,6 +3,20 @@ import * as docker from "@pulumi/docker";
 import { Guestbook } from "./guestbook";
 import { restartUnlessStopped } from "./transforms";
 
+pulumi.runtime.registerResourceTransform((args) => {
+  const labelled = [
+    "docker:index/container:Container",
+
+  ];
+  if (!labelled.includes(args.type)) return undefined;
+  const labels = [
+    ...(args.props.labels ?? []),
+    { label: "managed-by", value: "pulumi" },
+    { label: "project", value: pulumi.getProject() },
+  ];
+  return { props: { ...args.props, labels }, opts: args.opts };
+});
+
 const config = new pulumi.Config();
 const port = config.requireNumber("port");
 const title = config.get("title") ?? "Guestbook";

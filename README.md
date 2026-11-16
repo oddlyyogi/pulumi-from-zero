@@ -23,7 +23,7 @@ and a passphrase you choose (`PULUMI_CONFIG_PASSPHRASE`).
 | 10 | Kubernetes with Pulumi | [chapters/10-kubernetes-with-pulumi](chapters/10-kubernetes-with-pulumi) |
 | 11 | The Automation API | [chapters/11-the-automation-api](chapters/11-the-automation-api) |
 | 12 | CI/CD: GitHub Actions and Pulumi Deployments | coming soon |
-| 13 | Clean Up, Costs and Best Practices | coming soon |
+| 13 | Clean Up, Costs and Best Practices | [chapters/13-clean-up-costs-and-best-practices](chapters/13-clean-up-costs-and-best-practices) |
 
 ## Versions
 

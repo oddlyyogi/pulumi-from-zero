@@ -1,3 +1,4 @@
+import * as fs from "fs";
 import * as pulumi from "@pulumi/pulumi";
 import * as docker from "@pulumi/docker";
 import * as random from "@pulumi/random";
@@ -27,13 +28,23 @@ export class Guestbook extends pulumi.ComponentResource {
     }
     const child = { parent: this };
 
-    const data = new docker.Volume(`${name}-data`, {}, child);
+    const data = new docker.Volume(`${name}-data`, {}, {
+      ...child,
+      retainOnDelete: true,
+    });
 
     const generated = new random.RandomPassword(`${name}-token`, {
       length: 24,
       special: false,
     }, child);
     this.token = pulumi.output(args.adminToken ?? generated.result);
+
+    const saveMessages = new pulumi.ResourceHook(
+      `${name}-save`, async () => {
+      const res = await fetch(`http://localhost:${args.port}/api/messages`);
+      fs.mkdirSync("backups", { recursive: true });
+      fs.writeFileSync(`backups/${name}-messages.json`, await res.text());
+    });
 
     const container = new docker.Container(`${name}-web`, {
       image: args.image,
@@ -59,6 +70,7 @@ export class Guestbook extends pulumi.ComponentResource {
       ...child,
       ignoreChanges: ["memorySwap"],
       deleteBeforeReplace: true,
+      hooks: { beforeDelete: [saveMessages] },
     });
 
     this.containerName = container.name;

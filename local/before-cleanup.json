@@ -1,0 +1,1434 @@
+{
+    "version": 3,
+    "deployment": {
+        "manifest": {
+            "time": "2026-11-16T10:54:04.553436Z",
+            "magic": "a8ce862bb3201356034a2d41310dffb289d873f576feb681dd14b5ac87d739dd",
+            "version": "v3.276.0"
+        },
+        "secrets_providers": {
+            "type": "passphrase",
+            "state": {
+                "salt": "v1:xmiCOXsNGfc=:v1:EKMDnjPMAsuXEsUi:lcyTF+F78gfVCUTuUbj+OYJVshA/Rw=="
+            }
+        },
+        "resources": [
+            {
+                "urn": "urn:pulumi:dev::guestbook-local::pulumi:pulumi:Stack::guestbook-local-dev",
+                "custom": false,
+                "type": "pulumi:pulumi:Stack",
+                "outputs": {
+                    "containerName": "guestbook-web-c57b0c5",
+                    "extraUrls": [],
+                    "previewUrl": "http://localhost:8082",
+                    "token": {
+                        "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                        "ciphertext": "v1:MvNF6iykljPuc5ME:YwN4aQFD68YJHM1qotPQimjT5PlY2SVnYPEYGI0lsB2R5vKjtOu1Lygh"
+                    },
+                    "url": "http://localhost:8081"
+                },
+                "created": "2026-11-16T10:53:52.148152Z",
+                "modified": "2026-11-16T10:53:52.148152Z",
+                "sourcePosition": "project:///node_modules/@pulumi/runtime/stack.ts#38,19",
+                "stackTrace": [
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/runtime/stack.ts#38,19"
+                    },
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/cmd/run/run.ts#601,38"
+                    }
+                ]
+            },
+            {
+                "urn": "urn:pulumi:dev::guestbook-local::pulumi:providers:pulumi::default",
+                "custom": true,
+                "id": "f916318d-9bc2-41e2-9f64-d94a7fec9432",
+                "type": "pulumi:providers:pulumi",
+                "created": "2026-11-16T10:53:52.803103Z",
+                "modified": "2026-11-16T10:53:52.803103Z"
+            },
+            {
+                "urn": "urn:pulumi:dev::guestbook-local::pulumi:pulumi:StackReference::organization/guestbook-platform/shared",
+                "custom": true,
+                "id": "organization/guestbook-platform/shared",
+                "type": "pulumi:pulumi:StackReference",
+                "inputs": {
+                    "name": "organization/guestbook-platform/shared"
+                },
+                "outputs": {
+                    "name": "organization/guestbook-platform/shared",
+                    "outputs": {
+                        "networkName": "guestbook-shared"
+                    },
+                    "secretOutputNames": []
+                },
+                "parent": "urn:pulumi:dev::guestbook-local::pulumi:pulumi:Stack::guestbook-local-dev",
+                "external": true,
+                "provider": "urn:pulumi:dev::guestbook-local::pulumi:providers:pulumi::default::f916318d-9bc2-41e2-9f64-d94a7fec9432",
+                "sourcePosition": "project:///index.ts#27,18",
+                "stackTrace": [
+                    {
+                        "sourcePosition": "project:///index.ts#27,18"
+                    },
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/ts-node/src/index.ts#1618,23"
+                    },
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/ts-node/src/index.ts#1621,12"
+                    },
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/cmd/run/run.ts#541,33"
+                    },
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/runtime/stack.ts#79,28"
+                    },
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/resource.ts#1687,22"
+                    }
+                ]
+            },
+            {
+                "urn": "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook::guestbook",
+                "custom": false,
+                "type": "guestbook:app:Guestbook",
+                "outputs": {
+                    "containerName": "guestbook-web-c57b0c5",
+                    "url": "http://localhost:8081"
+                },
+                "parent": "urn:pulumi:dev::guestbook-local::pulumi:pulumi:Stack::guestbook-local-dev",
+                "protect": true,
+                "created": "2026-11-16T10:53:52.800751Z",
+                "modified": "2026-11-16T10:53:52.800751Z",
+                "sourcePosition": "project:///index.ts#37,14",
+                "stackTrace": [
+                    {
+                        "sourcePosition": "project:///index.ts#37,14"
+                    },
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/ts-node/src/index.ts#1618,23"
+                    },
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/ts-node/src/index.ts#1621,12"
+                    },
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/cmd/run/run.ts#541,33"
+                    },
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/runtime/stack.ts#79,28"
+                    },
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/resource.ts#1687,22"
+                    }
+                ]
+            },
+            {
+                "urn": "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook::preview",
+                "custom": false,
+                "type": "guestbook:app:Guestbook",
+                "outputs": {
+                    "containerName": "preview-web-197f810",
+                    "url": "http://localhost:8082"
+                },
+                "parent": "urn:pulumi:dev::guestbook-local::pulumi:pulumi:Stack::guestbook-local-dev",
+                "created": "2026-11-16T10:53:52.800173Z",
+                "modified": "2026-11-16T10:53:52.800173Z",
+                "sourcePosition": "project:///index.ts#46,20",
+                "stackTrace": [
+                    {
+                        "sourcePosition": "project:///index.ts#46,20"
+                    },
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/ts-node/src/index.ts#1618,23"
+                    },
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/ts-node/src/index.ts#1621,12"
+                    },
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/cmd/run/run.ts#541,33"
+                    },
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/runtime/stack.ts#79,28"
+                    },
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/resource.ts#1687,22"
+                    }
+                ]
+            },
+            {
+                "urn": "urn:pulumi:dev::guestbook-local::pulumi:providers:docker::default_5_3_0",
+                "custom": true,
+                "id": "faf30a7c-b11d-49ba-b77b-6561079b4e68",
+                "type": "pulumi:providers:docker",
+                "inputs": {
+                    "__internal": {},
+                    "version": "5.3.0"
+                },
+                "outputs": {
+                    "version": "5.3.0"
+                },
+                "created": "2026-11-16T10:53:52.801194Z",
+                "modified": "2026-11-16T10:53:52.801194Z"
+            },
+            {
+                "urn": "urn:pulumi:dev::guestbook-local::docker:index/image:Image::app-image",
+                "custom": true,
+                "id": "guestbook-app:v3",
+                "type": "docker:index/image:Image",
+                "inputs": {
+                    "build": {
+                        "context": "../app",
+                        "contextDigest": "4f4dd5e022020f0be9885bde972dff143fe723e0094c335ae4f3bde3bd518223",
+                        "dockerfile": "../app/Dockerfile",
+                        "platform": "linux/arm64"
+                    },
+                    "buildOnPreview": false,
+                    "imageName": "guestbook-app:v3",
+                    "skipPush": true
+                },
+                "outputs": {
+                    "__inputs": {
+                        "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                        "ciphertext": "v1:eG0q8UDPRQkehxsb:SIdalBe2CRdf/bLEtd9QG2uWTHqIRvtIF1eN901ppmPgNKMSS6PplT+hjOsg0AiQlwMPFPON8q3TfMHTevZ8LGppH3VXb8rr/EIonNy4mWnrnaIfczXmG9Wa9NqP9fl3Vfa0PLBtYJQ6KMNNOHzcqdEboZkwtM2bNB99/89RgUYANsLUNZsQ+GeV2S8jz9KTdKNN6jvl/hHqgJxbkcaTRQKcQdksO0n3ykTIJpTOz8Jq+uhEFd06/soQ7fV4AhEOljZCiZ+7yeYT/yyGQFJe+WguklbhdxmUE/LjPAvbSicL094JaTNdpESdrG1YictrkD4Lv1arKCA8ncVW6ASQZbc="
+                    },
+                    "baseImageName": "guestbook-app:v3",
+                    "context": "../app",
+                    "dockerfile": "Dockerfile",
+                    "imageName": "guestbook-app:v3",
+                    "platform": "linux/arm64",
+                    "registryServer": "",
+                    "repoDigest": "sha256:5cffdaf617f555d07d644d6571e7556a7226dffe94638f05445d7fa12caf414d"
+                },
+                "parent": "urn:pulumi:dev::guestbook-local::pulumi:pulumi:Stack::guestbook-local-dev",
+                "provider": "urn:pulumi:dev::guestbook-local::pulumi:providers:docker::default_5_3_0::faf30a7c-b11d-49ba-b77b-6561079b4e68",
+                "propertyDependencies": {
+                    "build": [],
+                    "buildOnPreview": [],
+                    "imageName": [],
+                    "skipPush": []
+                },
+                "created": "2026-11-16T10:53:53.397846Z",
+                "modified": "2026-11-16T10:53:53.397846Z",
+                "sourcePosition": "project:///index.ts#32,15",
+                "stackTrace": [
+                    {
+                        "sourcePosition": "project:///index.ts#32,15"
+                    },
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/ts-node/src/index.ts#1618,23"
+                    },
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/ts-node/src/index.ts#1621,12"
+                    },
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/cmd/run/run.ts#541,33"
+                    },
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/runtime/stack.ts#79,28"
+                    },
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/resource.ts#1687,22"
+                    }
+                ]
+            },
+            {
+                "urn": "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook$docker:index/volume:Volume::guestbook-data",
+                "custom": true,
+                "id": "guestbook-data-4d2ccb0",
+                "type": "docker:index/volume:Volume",
+                "inputs": {
+                    "__defaults": [
+                        "name"
+                    ],
+                    "name": "guestbook-data-4d2ccb0"
+                },
+                "outputs": {
+                    "__meta": "{\"schema_version\":\"1\"}",
+                    "__pulumi_raw_state_delta": {
+                        "obj": {
+                            "ps": {
+                                "cluster": {
+                                    "plu": {
+                                        "i": {}
+                                    }
+                                },
+                                "labels": {
+                                    "arr": {}
+                                }
+                            }
+                        }
+                    },
+                    "cluster": null,
+                    "driver": "local",
+                    "driverOpts": null,
+                    "id": "guestbook-data-4d2ccb0",
+                    "labels": [],
+                    "mountpoint": "/var/lib/docker/volumes/guestbook-data-4d2ccb0/_data",
+                    "name": "guestbook-data-4d2ccb0"
+                },
+                "parent": "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook::guestbook",
+                "protect": true,
+                "provider": "urn:pulumi:dev::guestbook-local::pulumi:providers:docker::default_5_3_0::faf30a7c-b11d-49ba-b77b-6561079b4e68",
+                "created": "2026-11-16T10:53:52.824435Z",
+                "modified": "2026-11-16T10:53:52.824435Z",
+                "sourcePosition": "project:///guestbook.ts#30,18",
+                "stackTrace": [
+                    {
+                        "sourcePosition": "project:///guestbook.ts#30,18"
+                    },
+                    {
+                        "sourcePosition": "project:///index.ts#37,14"
+                    },
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/ts-node/src/index.ts#1618,23"
+                    },
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/ts-node/src/index.ts#1621,12"
+                    },
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/cmd/run/run.ts#541,33"
+                    },
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/runtime/stack.ts#79,28"
+                    },
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/resource.ts#1687,22"
+                    }
+                ]
+            },
+            {
+                "urn": "urn:pulumi:dev::guestbook-local::pulumi:providers:random::default_4_21_6",
+                "custom": true,
+                "id": "6eed4e7d-e558-4119-99b3-27fe2f899bae",
+                "type": "pulumi:providers:random",
+                "inputs": {
+                    "__internal": {},
+                    "version": "4.21.6"
+                },
+                "outputs": {
+                    "version": "4.21.6"
+                },
+                "created": "2026-11-16T10:53:52.843703Z",
+                "modified": "2026-11-16T10:53:52.843703Z"
+            },
+            {
+                "urn": "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook$random:index/randomPassword:RandomPassword::guestbook-token",
+                "custom": true,
+                "id": "none",
+                "type": "random:index/randomPassword:RandomPassword",
+                "inputs": {
+                    "length": 24,
+                    "special": false
+                },
+                "outputs": {
+                    "__meta": "{\"schema_version\":\"3\"}",
+                    "__pulumi_raw_state_delta": {
+                        "obj": {
+                            "ps": {
+                                "keepers": {
+                                    "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                                    "ciphertext": "v1:nyPvovRX5X+4DV/3:UyTe2p2dBJR14qjJD2dB7gw3LYadhZ5ULCjkaG8mRe1i2nhQbTfLXQ=="
+                                },
+                                "overrideSpecial": {
+                                    "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                                    "ciphertext": "v1:yY4UjJf3tdNztvrj:RnyP9eEnZYSgfpcEYT9hERV2NJTDaZzv5cQG8vehQAz1Nfjw+D6aqQ=="
+                                }
+                            }
+                        }
+                    },
+                    "bcryptHash": {
+                        "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                        "ciphertext": "v1:SJsXhjcxVsB3Fs6k:7C6NYfWNtCp9B8sYLb3bc8dPZQPxPmXjfpfLeuTovEPFV7NgwH1DHLhE6F5dvOeLTeZzPwIuKe3SJSRFRAjfWQgWLaXwdkG8M7p3/8go"
+                    },
+                    "id": "none",
+                    "length": 24,
+                    "lower": true,
+                    "minLower": 0,
+                    "minNumeric": 0,
+                    "minSpecial": 0,
+                    "minUpper": 0,
+                    "number": true,
+                    "numeric": true,
+                    "result": {
+                        "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                        "ciphertext": "v1:8SW0IFYYkIJNy8nq:iw2rec4KWnUwuiW0UGGCad5SSsr6rrMl3yAqDDNlhrPRcVmTTLEcw67b"
+                    },
+                    "special": false,
+                    "upper": true
+                },
+                "parent": "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook::guestbook",
+                "protect": true,
+                "provider": "urn:pulumi:dev::guestbook-local::pulumi:providers:random::default_4_21_6::6eed4e7d-e558-4119-99b3-27fe2f899bae",
+                "propertyDependencies": {
+                    "length": [],
+                    "special": []
+                },
+                "additionalSecretOutputs": [
+                    "bcryptHash",
+                    "result"
+                ],
+                "created": "2026-11-16T10:53:52.907869Z",
+                "modified": "2026-11-16T10:53:52.907869Z",
+                "sourcePosition": "project:///guestbook.ts#32,23",
+                "stackTrace": [
+                    {
+                        "sourcePosition": "project:///guestbook.ts#32,23"
+                    },
+                    {
+                        "sourcePosition": "project:///index.ts#37,14"
+                    },
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/ts-node/src/index.ts#1618,23"
+                    },
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/ts-node/src/index.ts#1621,12"
+                    },
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/cmd/run/run.ts#541,33"
+                    },
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/runtime/stack.ts#79,28"
+                    },
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/resource.ts#1687,22"
+                    }
+                ]
+            },
+            {
+                "urn": "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook$random:index/randomPassword:RandomPassword::preview-token",
+                "custom": true,
+                "id": "none",
+                "type": "random:index/randomPassword:RandomPassword",
+                "inputs": {
+                    "length": 24,
+                    "special": false
+                },
+                "outputs": {
+                    "__meta": "{\"schema_version\":\"3\"}",
+                    "__pulumi_raw_state_delta": {
+                        "obj": {
+                            "ps": {
+                                "keepers": {
+                                    "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                                    "ciphertext": "v1:0G38ifKUVb22E/T8:nzxNzOSbMdon+VSNctlQtZKPg1MuxD/AdWKateVLSeGf5tKPQpt0tg=="
+                                },
+                                "overrideSpecial": {
+                                    "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                                    "ciphertext": "v1:oI6CxCqcvyKRzGSp:3Ss7qHmhH+hCWrSJq+yaSDqPcvAHJ85KYX5hphteGe6+i7rxH+1CYA=="
+                                }
+                            }
+                        }
+                    },
+                    "bcryptHash": {
+                        "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                        "ciphertext": "v1:qYCg0DKCe9RTZPDV:EYdtoiVJDpnXnqe9Gu6WAPkrsFMGY1ExLrmaqQosHjpEjCBIFDFkmo/Vksz8PlvZrkmFF+VFnLIWn4DKNyVLy+wk7+kRdJfPr4D7Ent1"
+                    },
+                    "id": "none",
+                    "length": 24,
+                    "lower": true,
+                    "minLower": 0,
+                    "minNumeric": 0,
+                    "minSpecial": 0,
+                    "minUpper": 0,
+                    "number": true,
+                    "numeric": true,
+                    "result": {
+                        "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                        "ciphertext": "v1:pHilkV1e4f7ktKno:PukuMqap7LrV0puliPVbkm0k2AvmrFkrW9XA/aFIVQjq4KN6xMKGJroS"
+                    },
+                    "special": false,
+                    "upper": true
+                },
+                "parent": "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook::preview",
+                "provider": "urn:pulumi:dev::guestbook-local::pulumi:providers:random::default_4_21_6::6eed4e7d-e558-4119-99b3-27fe2f899bae",
+                "propertyDependencies": {
+                    "length": [],
+                    "special": []
+                },
+                "additionalSecretOutputs": [
+                    "bcryptHash",
+                    "result"
+                ],
+                "created": "2026-11-16T10:53:52.907867Z",
+                "modified": "2026-11-16T10:53:52.907867Z",
+                "sourcePosition": "project:///guestbook.ts#32,23",
+                "stackTrace": [
+                    {
+                        "sourcePosition": "project:///guestbook.ts#32,23"
+                    },
+                    {
+                        "sourcePosition": "project:///index.ts#46,20"
+                    },
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/ts-node/src/index.ts#1618,23"
+                    },
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/ts-node/src/index.ts#1621,12"
+                    },
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/cmd/run/run.ts#541,33"
+                    },
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/runtime/stack.ts#79,28"
+                    },
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/resource.ts#1687,22"
+                    }
+                ]
+            },
+            {
+                "urn": "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook$docker:index/volume:Volume::preview-data",
+                "custom": true,
+                "id": "preview-data-0666933",
+                "type": "docker:index/volume:Volume",
+                "inputs": {
+                    "__defaults": [
+                        "name"
+                    ],
+                    "name": "preview-data-0666933"
+                },
+                "outputs": {
+                    "__meta": "{\"schema_version\":\"1\"}",
+                    "__pulumi_raw_state_delta": {
+                        "obj": {
+                            "ps": {
+                                "cluster": {
+                                    "plu": {
+                                        "i": {}
+                                    }
+                                },
+                                "labels": {
+                                    "arr": {}
+                                }
+                            }
+                        }
+                    },
+                    "cluster": null,
+                    "driver": "local",
+                    "driverOpts": null,
+                    "id": "preview-data-0666933",
+                    "labels": [],
+                    "mountpoint": "/var/lib/docker/volumes/preview-data-0666933/_data",
+                    "name": "preview-data-0666933"
+                },
+                "parent": "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook::preview",
+                "provider": "urn:pulumi:dev::guestbook-local::pulumi:providers:docker::default_5_3_0::faf30a7c-b11d-49ba-b77b-6561079b4e68",
+                "created": "2026-11-16T10:53:52.852682Z",
+                "modified": "2026-11-16T10:53:52.852682Z",
+                "sourcePosition": "project:///guestbook.ts#30,18",
+                "stackTrace": [
+                    {
+                        "sourcePosition": "project:///guestbook.ts#30,18"
+                    },
+                    {
+                        "sourcePosition": "project:///index.ts#46,20"
+                    },
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/ts-node/src/index.ts#1618,23"
+                    },
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/ts-node/src/index.ts#1621,12"
+                    },
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/cmd/run/run.ts#541,33"
+                    },
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/runtime/stack.ts#79,28"
+                    },
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/resource.ts#1687,22"
+                    }
+                ]
+            },
+            {
+                "urn": "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook$docker:index/container:Container::guestbook-web",
+                "custom": true,
+                "id": "893a57c02a9a852d041c2168baa6a54a1d02296282eae09fa3b96ce6d9c25fda",
+                "type": "docker:index/container:Container",
+                "inputs": {
+                    "__defaults": [
+                        "containerReadRefreshTimeoutMilliseconds",
+                        "mustRun",
+                        "name",
+                        "networkMode",
+                        "removeVolumes",
+                        "restart",
+                        "start",
+                        "waitTimeout"
+                    ],
+                    "containerReadRefreshTimeoutMilliseconds": 15000,
+                    "envs": {
+                        "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                        "ciphertext": "v1:s1bHyQ1hqAPuCzPy:n3juzAsAo24GbxGo7hNQeUCysNx7lHW2u5sicLWGuWSkpG+RX0rBt0+WgUY9Wk00Xuf2uGFEavFx/+CGqT6Z+7/7+l6rMmpnhkSokeLIiWs="
+                    },
+                    "image": "guestbook-app:v3",
+                    "labels": [
+                        {
+                            "__defaults": [],
+                            "label": "guestbook.stack",
+                            "value": "dev"
+                        },
+                        {
+                            "__defaults": [],
+                            "label": "guestbook.info",
+                            "value": "{\"network\":\"guestbook-shared\",\"port\":8081}"
+                        },
+                        {
+                            "__defaults": [],
+                            "label": "managed-by",
+                            "value": "pulumi"
+                        },
+                        {
+                            "__defaults": [],
+                            "label": "project",
+                            "value": "guestbook-local"
+                        }
+                    ],
+                    "memory": 128,
+                    "mustRun": true,
+                    "name": "guestbook-web-c57b0c5",
+                    "networkMode": "bridge",
+                    "networksAdvanced": [
+                        {
+                            "__defaults": [],
+                            "name": "guestbook-shared"
+                        }
+                    ],
+                    "ports": [
+                        {
+                            "__defaults": [
+                                "ip",
+                                "protocol"
+                            ],
+                            "external": 8081,
+                            "internal": 8080,
+                            "ip": "0.0.0.0",
+                            "protocol": "tcp"
+                        }
+                    ],
+                    "removeVolumes": true,
+                    "restart": "no",
+                    "start": true,
+                    "volumes": [
+                        {
+                            "__defaults": [],
+                            "containerPath": "/data",
+                            "volumeName": "guestbook-data-4d2ccb0"
+                        }
+                    ],
+                    "waitTimeout": 60
+                },
+                "outputs": {
+                    "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"update\":1200000000000},\"schema_version\":\"2\"}",
+                    "__pulumi_raw_state_delta": {
+                        "obj": {
+                            "ps": {
+                                "capabilities": {
+                                    "plu": {
+                                        "i": {}
+                                    }
+                                },
+                                "command": {
+                                    "arr": {}
+                                },
+                                "deviceReadBps": {
+                                    "arr": {}
+                                },
+                                "deviceReadIops": {
+                                    "arr": {}
+                                },
+                                "deviceRequests": {
+                                    "arr": {}
+                                },
+                                "deviceWriteBps": {
+                                    "arr": {}
+                                },
+                                "deviceWriteIops": {
+                                    "arr": {}
+                                },
+                                "devices": {
+                                    "arr": {}
+                                },
+                                "entrypoints": {
+                                    "arr": {}
+                                },
+                                "envs": {
+                                    "arr": {}
+                                },
+                                "hosts": {
+                                    "arr": {}
+                                },
+                                "labels": {
+                                    "arr": {
+                                        "el": {
+                                            "0": {
+                                                "obj": {}
+                                            },
+                                            "1": {
+                                                "obj": {}
+                                            },
+                                            "2": {
+                                                "obj": {}
+                                            },
+                                            "3": {
+                                                "obj": {}
+                                            }
+                                        }
+                                    }
+                                },
+                                "mounts": {
+                                    "arr": {}
+                                },
+                                "networkDatas": {
+                                    "arr": {
+                                        "el": {
+                                            "0": {
+                                                "obj": {}
+                                            }
+                                        }
+                                    }
+                                },
+                                "networksAdvanced": {
+                                    "arr": {
+                                        "el": {
+                                            "0": {
+                                                "obj": {
+                                                    "ps": {
+                                                        "aliases": {
+                                                            "arr": {}
+                                                        },
+                                                        "driverOpts": {
+                                                            "arr": {}
+                                                        },
+                                                        "linkLocalIps": {
+                                                            "arr": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "ports": {
+                                    "arr": {
+                                        "el": {
+                                            "0": {
+                                                "obj": {}
+                                            }
+                                        }
+                                    }
+                                },
+                                "securityOpts": {
+                                    "arr": {}
+                                },
+                                "ulimits": {
+                                    "arr": {}
+                                },
+                                "uploads": {
+                                    "arr": {}
+                                },
+                                "volumes": {
+                                    "arr": {
+                                        "el": {
+                                            "0": {
+                                                "obj": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "renamed": {
+                                "dnsSearches": "dns_search",
+                                "entrypoints": "entrypoint",
+                                "envs": "env",
+                                "groupAdds": "group_add",
+                                "hosts": "host",
+                                "networkDatas": "network_data",
+                                "ulimits": "ulimit",
+                                "uploads": "upload"
+                            }
+                        }
+                    },
+                    "attach": false,
+                    "bridge": "",
+                    "capabilities": null,
+                    "cgroupParent": null,
+                    "cgroupnsMode": null,
+                    "command": [
+                        "node",
+                        "server.js"
+                    ],
+                    "containerLogs": null,
+                    "containerReadRefreshTimeoutMilliseconds": 15000,
+                    "cpuPeriod": null,
+                    "cpuQuota": null,
+                    "cpuSet": "",
+                    "cpuShares": 0,
+                    "cpus": null,
+                    "destroyGraceSeconds": null,
+                    "deviceCgroupRules": null,
+                    "deviceReadBps": [],
+                    "deviceReadIops": [],
+                    "deviceRequests": [],
+                    "deviceWriteBps": [],
+                    "deviceWriteIops": [],
+                    "devices": [],
+                    "dns": null,
+                    "dnsOpts": null,
+                    "dnsSearches": null,
+                    "domainname": "",
+                    "entrypoints": [
+                        "docker-entrypoint.sh"
+                    ],
+                    "envs": {
+                        "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                        "ciphertext": "v1:iKnzFFUx9v9Af3uD:yIHaAvao8PfdeehCt0RK+byPjc1FQzOV/RW7Whncw0jCsrYtqiGw5y69HHX5BBT/HRZlywMA6jFdp3q69j9xlFbYjib3Kwdc0ieIWOJ6bDE="
+                    },
+                    "exitCode": null,
+                    "gpus": null,
+                    "groupAdds": null,
+                    "healthcheck": null,
+                    "hostname": "893a57c02a9a",
+                    "hosts": [],
+                    "id": "893a57c02a9a852d041c2168baa6a54a1d02296282eae09fa3b96ce6d9c25fda",
+                    "image": "guestbook-app:v3",
+                    "init": false,
+                    "ipcMode": "private",
+                    "labels": [
+                        {
+                            "label": "guestbook.info",
+                            "value": "{\"network\":\"guestbook-shared\",\"port\":8081}"
+                        },
+                        {
+                            "label": "guestbook.stack",
+                            "value": "dev"
+                        },
+                        {
+                            "label": "managed-by",
+                            "value": "pulumi"
+                        },
+                        {
+                            "label": "project",
+                            "value": "guestbook-local"
+                        }
+                    ],
+                    "logDriver": "json-file",
+                    "logOpts": null,
+                    "logs": false,
+                    "maxRetryCount": 0,
+                    "memory": 128,
+                    "memoryReservation": 0,
+                    "memorySwap": 256,
+                    "mounts": [],
+                    "mustRun": true,
+                    "name": "guestbook-web-c57b0c5",
+                    "networkDatas": [
+                        {
+                            "gateway": "172.19.0.1",
+                            "globalIpv6Address": "",
+                            "globalIpv6PrefixLength": 0,
+                            "ipAddress": "172.19.0.2",
+                            "ipPrefixLength": 16,
+                            "ipv6Gateway": "",
+                            "macAddress": "12:bd:77:57:96:5a",
+                            "networkName": "guestbook-shared"
+                        }
+                    ],
+                    "networkMode": "bridge",
+                    "networksAdvanced": [
+                        {
+                            "aliases": [],
+                            "driverOpts": [],
+                            "gwPriority": null,
+                            "ipv4Address": "",
+                            "ipv6Address": "",
+                            "linkLocalIps": [],
+                            "macAddress": "",
+                            "name": "guestbook-shared"
+                        }
+                    ],
+                    "pidMode": null,
+                    "platform": "linux",
+                    "ports": [
+                        {
+                            "external": 8081,
+                            "internal": 8080,
+                            "ip": "0.0.0.0",
+                            "protocol": "tcp"
+                        }
+                    ],
+                    "privileged": false,
+                    "publishAllPorts": false,
+                    "readOnly": false,
+                    "removeVolumes": true,
+                    "restart": "no",
+                    "rm": false,
+                    "runtime": "runc",
+                    "securityOpts": [],
+                    "shmSize": 64,
+                    "start": true,
+                    "stdinOpen": false,
+                    "stopSignal": "",
+                    "stopTimeout": 0,
+                    "storageOpts": null,
+                    "sysctls": null,
+                    "tmpfs": null,
+                    "tty": false,
+                    "ulimits": [],
+                    "uploads": [],
+                    "user": "node",
+                    "usernsMode": "",
+                    "volumes": [
+                        {
+                            "containerPath": "/data",
+                            "fromContainer": "",
+                            "hostPath": "",
+                            "readOnly": null,
+                            "selinuxRelabel": "",
+                            "volumeName": "guestbook-data-4d2ccb0"
+                        }
+                    ],
+                    "wait": false,
+                    "waitTimeout": 60,
+                    "workingDir": "/app"
+                },
+                "parent": "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook::guestbook",
+                "protect": true,
+                "dependencies": [
+                    "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook$random:index/randomPassword:RandomPassword::guestbook-token",
+                    "urn:pulumi:dev::guestbook-local::docker:index/image:Image::app-image",
+                    "urn:pulumi:dev::guestbook-local::pulumi:pulumi:StackReference::organization/guestbook-platform/shared",
+                    "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook$docker:index/volume:Volume::guestbook-data"
+                ],
+                "provider": "urn:pulumi:dev::guestbook-local::pulumi:providers:docker::default_5_3_0::faf30a7c-b11d-49ba-b77b-6561079b4e68",
+                "propertyDependencies": {
+                    "envs": [
+                        "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook$random:index/randomPassword:RandomPassword::guestbook-token"
+                    ],
+                    "image": [
+                        "urn:pulumi:dev::guestbook-local::docker:index/image:Image::app-image"
+                    ],
+                    "labels": [
+                        "urn:pulumi:dev::guestbook-local::pulumi:pulumi:StackReference::organization/guestbook-platform/shared"
+                    ],
+                    "memory": [],
+                    "networksAdvanced": [
+                        "urn:pulumi:dev::guestbook-local::pulumi:pulumi:StackReference::organization/guestbook-platform/shared"
+                    ],
+                    "ports": [],
+                    "volumes": [
+                        "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook$docker:index/volume:Volume::guestbook-data"
+                    ]
+                },
+                "created": "2026-11-16T10:54:01.321269Z",
+                "modified": "2026-11-16T10:54:01.321269Z",
+                "sourcePosition": "project:///guestbook.ts#38,23",
+                "stackTrace": [
+                    {
+                        "sourcePosition": "project:///guestbook.ts#38,23"
+                    },
+                    {
+                        "sourcePosition": "project:///index.ts#37,14"
+                    },
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/ts-node/src/index.ts#1618,23"
+                    },
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/ts-node/src/index.ts#1621,12"
+                    },
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/cmd/run/run.ts#541,33"
+                    },
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/runtime/stack.ts#79,28"
+                    },
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/resource.ts#1687,22"
+                    }
+                ],
+                "ignoreChanges": [
+                    "memorySwap"
+                ]
+            },
+            {
+                "urn": "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook$docker:index/container:Container::preview-web",
+                "custom": true,
+                "id": "76c5b3e88738287237a221efe77a1be1153502bac273b4864227669e2b719a94",
+                "type": "docker:index/container:Container",
+                "inputs": {
+                    "__defaults": [
+                        "containerReadRefreshTimeoutMilliseconds",
+                        "mustRun",
+                        "name",
+                        "networkMode",
+                        "removeVolumes",
+                        "start",
+                        "waitTimeout"
+                    ],
+                    "containerReadRefreshTimeoutMilliseconds": 15000,
+                    "envs": {
+                        "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                        "ciphertext": "v1:43/P6axwxsEc/Qki:Z8JRf38VyhuM+ec/utVXFoQHgn12XGphxSXqMRHOy+LoUExB17GutkqBnUCRtBABSva0wO1YTnwC9j+0JYL1BeehcHGMbP5fquki7u1Sn+gJExZxTYZrr0k="
+                    },
+                    "image": "guestbook-app:v3",
+                    "labels": [
+                        {
+                            "__defaults": [],
+                            "label": "guestbook.stack",
+                            "value": "dev"
+                        },
+                        {
+                            "__defaults": [],
+                            "label": "guestbook.info",
+                            "value": "{\"network\":\"guestbook-shared\",\"port\":8082}"
+                        },
+                        {
+                            "__defaults": [],
+                            "label": "managed-by",
+                            "value": "pulumi"
+                        },
+                        {
+                            "__defaults": [],
+                            "label": "project",
+                            "value": "guestbook-local"
+                        }
+                    ],
+                    "memory": 64,
+                    "mustRun": true,
+                    "name": "preview-web-197f810",
+                    "networkMode": "bridge",
+                    "networksAdvanced": [
+                        {
+                            "__defaults": [],
+                            "name": "guestbook-shared"
+                        }
+                    ],
+                    "ports": [
+                        {
+                            "__defaults": [
+                                "ip",
+                                "protocol"
+                            ],
+                            "external": 8082,
+                            "internal": 8080,
+                            "ip": "0.0.0.0",
+                            "protocol": "tcp"
+                        }
+                    ],
+                    "removeVolumes": true,
+                    "restart": "unless-stopped",
+                    "start": true,
+                    "volumes": [
+                        {
+                            "__defaults": [],
+                            "containerPath": "/data",
+                            "volumeName": "preview-data-0666933"
+                        }
+                    ],
+                    "waitTimeout": 60
+                },
+                "outputs": {
+                    "__meta": "{\"e2bfb730-ecaa-11e6-8f88-34363bc7c4c0\":{\"create\":1200000000000,\"delete\":1200000000000,\"update\":1200000000000},\"schema_version\":\"2\"}",
+                    "__pulumi_raw_state_delta": {
+                        "obj": {
+                            "ps": {
+                                "capabilities": {
+                                    "plu": {
+                                        "i": {}
+                                    }
+                                },
+                                "command": {
+                                    "arr": {}
+                                },
+                                "deviceReadBps": {
+                                    "arr": {}
+                                },
+                                "deviceReadIops": {
+                                    "arr": {}
+                                },
+                                "deviceRequests": {
+                                    "arr": {}
+                                },
+                                "deviceWriteBps": {
+                                    "arr": {}
+                                },
+                                "deviceWriteIops": {
+                                    "arr": {}
+                                },
+                                "devices": {
+                                    "arr": {}
+                                },
+                                "entrypoints": {
+                                    "arr": {}
+                                },
+                                "envs": {
+                                    "arr": {}
+                                },
+                                "hosts": {
+                                    "arr": {}
+                                },
+                                "labels": {
+                                    "arr": {
+                                        "el": {
+                                            "0": {
+                                                "obj": {}
+                                            },
+                                            "1": {
+                                                "obj": {}
+                                            },
+                                            "2": {
+                                                "obj": {}
+                                            },
+                                            "3": {
+                                                "obj": {}
+                                            }
+                                        }
+                                    }
+                                },
+                                "mounts": {
+                                    "arr": {}
+                                },
+                                "networkDatas": {
+                                    "arr": {
+                                        "el": {
+                                            "0": {
+                                                "obj": {}
+                                            }
+                                        }
+                                    }
+                                },
+                                "networksAdvanced": {
+                                    "arr": {
+                                        "el": {
+                                            "0": {
+                                                "obj": {
+                                                    "ps": {
+                                                        "aliases": {
+                                                            "arr": {}
+                                                        },
+                                                        "driverOpts": {
+                                                            "arr": {}
+                                                        },
+                                                        "linkLocalIps": {
+                                                            "arr": {}
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                "ports": {
+                                    "arr": {
+                                        "el": {
+                                            "0": {
+                                                "obj": {}
+                                            }
+                                        }
+                                    }
+                                },
+                                "securityOpts": {
+                                    "arr": {}
+                                },
+                                "ulimits": {
+                                    "arr": {}
+                                },
+                                "uploads": {
+                                    "arr": {}
+                                },
+                                "volumes": {
+                                    "arr": {
+                                        "el": {
+                                            "0": {
+                                                "obj": {}
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "renamed": {
+                                "dnsSearches": "dns_search",
+                                "entrypoints": "entrypoint",
+                                "envs": "env",
+                                "groupAdds": "group_add",
+                                "hosts": "host",
+                                "networkDatas": "network_data",
+                                "ulimits": "ulimit",
+                                "uploads": "upload"
+                            }
+                        }
+                    },
+                    "attach": false,
+                    "bridge": "",
+                    "capabilities": null,
+                    "cgroupParent": null,
+                    "cgroupnsMode": null,
+                    "command": [
+                        "node",
+                        "server.js"
+                    ],
+                    "containerLogs": null,
+                    "containerReadRefreshTimeoutMilliseconds": 15000,
+                    "cpuPeriod": null,
+                    "cpuQuota": null,
+                    "cpuSet": "",
+                    "cpuShares": 0,
+                    "cpus": null,
+                    "destroyGraceSeconds": null,
+                    "deviceCgroupRules": null,
+                    "deviceReadBps": [],
+                    "deviceReadIops": [],
+                    "deviceRequests": [],
+                    "deviceWriteBps": [],
+                    "deviceWriteIops": [],
+                    "devices": [],
+                    "dns": null,
+                    "dnsOpts": null,
+                    "dnsSearches": null,
+                    "domainname": "",
+                    "entrypoints": [
+                        "docker-entrypoint.sh"
+                    ],
+                    "envs": {
+                        "4dabf18193072939515e22adb298388d": "1b47061264138c4ac30d75fd1eb44270",
+                        "ciphertext": "v1:fE9JmN1jzSIVOnAC:w5ANsBuGZFJjN8NHAXXvmY+I//GPKYZbrkUXJ7DTE35YllHCKdnJ8NGfNuP3VoR4+jtsCqDRcwgd8K8kACncUzUaaA+c+zdQfK7ISE4yT414QQiVRprmeUs="
+                    },
+                    "exitCode": null,
+                    "gpus": null,
+                    "groupAdds": null,
+                    "healthcheck": null,
+                    "hostname": "76c5b3e88738",
+                    "hosts": [],
+                    "id": "76c5b3e88738287237a221efe77a1be1153502bac273b4864227669e2b719a94",
+                    "image": "guestbook-app:v3",
+                    "init": false,
+                    "ipcMode": "private",
+                    "labels": [
+                        {
+                            "label": "guestbook.info",
+                            "value": "{\"network\":\"guestbook-shared\",\"port\":8082}"
+                        },
+                        {
+                            "label": "guestbook.stack",
+                            "value": "dev"
+                        },
+                        {
+                            "label": "managed-by",
+                            "value": "pulumi"
+                        },
+                        {
+                            "label": "project",
+                            "value": "guestbook-local"
+                        }
+                    ],
+                    "logDriver": "json-file",
+                    "logOpts": null,
+                    "logs": false,
+                    "maxRetryCount": 0,
+                    "memory": 64,
+                    "memoryReservation": 0,
+                    "memorySwap": 128,
+                    "mounts": [],
+                    "mustRun": true,
+                    "name": "preview-web-197f810",
+                    "networkDatas": [
+                        {
+                            "gateway": "172.19.0.1",
+                            "globalIpv6Address": "",
+                            "globalIpv6PrefixLength": 0,
+                            "ipAddress": "172.19.0.3",
+                            "ipPrefixLength": 16,
+                            "ipv6Gateway": "",
+                            "macAddress": "2a:58:6d:30:c8:ee",
+                            "networkName": "guestbook-shared"
+                        }
+                    ],
+                    "networkMode": "bridge",
+                    "networksAdvanced": [
+                        {
+                            "aliases": [],
+                            "driverOpts": [],
+                            "gwPriority": null,
+                            "ipv4Address": "",
+                            "ipv6Address": "",
+                            "linkLocalIps": [],
+                            "macAddress": "",
+                            "name": "guestbook-shared"
+                        }
+                    ],
+                    "pidMode": null,
+                    "platform": "linux",
+                    "ports": [
+                        {
+                            "external": 8082,
+                            "internal": 8080,
+                            "ip": "0.0.0.0",
+                            "protocol": "tcp"
+                        }
+                    ],
+                    "privileged": false,
+                    "publishAllPorts": false,
+                    "readOnly": false,
+                    "removeVolumes": true,
+                    "restart": "unless-stopped",
+                    "rm": false,
+                    "runtime": "runc",
+                    "securityOpts": [],
+                    "shmSize": 64,
+                    "start": true,
+                    "stdinOpen": false,
+                    "stopSignal": "",
+                    "stopTimeout": 0,
+                    "storageOpts": null,
+                    "sysctls": null,
+                    "tmpfs": null,
+                    "tty": false,
+                    "ulimits": [],
+                    "uploads": [],
+                    "user": "node",
+                    "usernsMode": "",
+                    "volumes": [
+                        {
+                            "containerPath": "/data",
+                            "fromContainer": "",
+                            "hostPath": "",
+                            "readOnly": null,
+                            "selinuxRelabel": "",
+                            "volumeName": "preview-data-0666933"
+                        }
+                    ],
+                    "wait": false,
+                    "waitTimeout": 60,
+                    "workingDir": "/app"
+                },
+                "parent": "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook::preview",
+                "dependencies": [
+                    "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook$docker:index/volume:Volume::preview-data",
+                    "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook$random:index/randomPassword:RandomPassword::preview-token",
+                    "urn:pulumi:dev::guestbook-local::docker:index/image:Image::app-image",
+                    "urn:pulumi:dev::guestbook-local::pulumi:pulumi:StackReference::organization/guestbook-platform/shared"
+                ],
+                "provider": "urn:pulumi:dev::guestbook-local::pulumi:providers:docker::default_5_3_0::faf30a7c-b11d-49ba-b77b-6561079b4e68",
+                "propertyDependencies": {
+                    "envs": [
+                        "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook$random:index/randomPassword:RandomPassword::preview-token"
+                    ],
+                    "image": [
+                        "urn:pulumi:dev::guestbook-local::docker:index/image:Image::app-image"
+                    ],
+                    "labels": [
+                        "urn:pulumi:dev::guestbook-local::pulumi:pulumi:StackReference::organization/guestbook-platform/shared"
+                    ],
+                    "memory": [],
+                    "networksAdvanced": [
+                        "urn:pulumi:dev::guestbook-local::pulumi:pulumi:StackReference::organization/guestbook-platform/shared"
+                    ],
+                    "ports": [],
+                    "restart": [],
+                    "volumes": [
+                        "urn:pulumi:dev::guestbook-local::guestbook:app:Guestbook$docker:index/volume:Volume::preview-data"
+                    ]
+                },
+                "created": "2026-11-16T10:54:01.373335Z",
+                "modified": "2026-11-16T10:54:01.373335Z",
+                "sourcePosition": "project:///guestbook.ts#38,23",
+                "stackTrace": [
+                    {
+                        "sourcePosition": "project:///guestbook.ts#38,23"
+                    },
+                    {
+                        "sourcePosition": "project:///index.ts#46,20"
+                    },
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/ts-node/src/index.ts#1618,23"
+                    },
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/ts-node/src/index.ts#1621,12"
+                    },
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/cmd/run/run.ts#541,33"
+                    },
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/runtime/stack.ts#79,28"
+                    },
+                    {
+                        "sourcePosition": "project:///node_modules/@pulumi/resource.ts#1687,22"
+                    }
+                ],
+                "ignoreChanges": [
+                    "memorySwap"
+                ]
+            }
+        ],
+        "metadata": {}
+    }
+}

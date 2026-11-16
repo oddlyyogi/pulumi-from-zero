@@ -60,7 +60,11 @@ const web = new k8s.apps.v1.Deployment("web", {
       },
     },
   },
-}, { ...opts, customTimeouts: { create: "2m", update: "2m" } });
+}, {
+  ...opts,
+  customTimeouts: { create: "2m", update: "2m" },
+  deletedWith: ns,
+});
 
 export const deployment = web.metadata.name;
 
