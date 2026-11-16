@@ -15,7 +15,7 @@ and a passphrase you choose (`PULUMI_CONFIG_PASSPHRASE`).
 | 2 | Resources, Inputs and Outputs | [chapters/02-resources-inputs-and-outputs](chapters/02-resources-inputs-and-outputs) |
 | 3 | Projects, Stacks and Config | [chapters/03-projects-stacks-and-config](chapters/03-projects-stacks-and-config) |
 | 4 | Deploy to AWS | [chapters/04-deploy-to-aws](chapters/04-deploy-to-aws) |
-| 5 | Deploy to Azure | coming soon |
+| 5 | Deploy to Azure | [chapters/05-deploy-to-azure](chapters/05-deploy-to-azure) |
 | 6 | Component Resources | coming soon |
 | 7 | State, Import and Refactoring | coming soon |
 | 8 | Secrets and Environments with Pulumi ESC | coming soon |
