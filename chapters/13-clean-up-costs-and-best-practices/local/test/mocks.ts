@@ -25,6 +25,11 @@ pulumi.runtime.setMocks({
   call: (args) => args.inputs,
 }, "guestbook-local", "test", false);
 
+// The mock engine cannot run resource hooks, so hooks are tested as plain
+// functions; here we only let the program register them.
+const callbacks: any = require("@pulumi/pulumi/runtime/settings").getCallbacks();
+callbacks.registerResourceHook = async () => {};
+
 export function value<T>(output: pulumi.Output<T>): Promise<T> {
   return new Promise((resolve) => output.apply(resolve));
 }
