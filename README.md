@@ -20,7 +20,7 @@ and a passphrase you choose (`PULUMI_CONFIG_PASSPHRASE`).
 | 7 | State, Import and Refactoring | [chapters/07-state-import-and-refactoring](chapters/07-state-import-and-refactoring) |
 | 8 | Secrets and Environments with Pulumi ESC | coming soon |
 | 9 | Test Infrastructure Code | [chapters/09-test-infrastructure-code](chapters/09-test-infrastructure-code) |
-| 10 | Kubernetes with Pulumi | coming soon |
+| 10 | Kubernetes with Pulumi | [chapters/10-kubernetes-with-pulumi](chapters/10-kubernetes-with-pulumi) |
 | 11 | The Automation API | coming soon |
 | 12 | CI/CD: GitHub Actions and Pulumi Deployments | coming soon |
 | 13 | Clean Up, Costs and Best Practices | coming soon |

@@ -1,0 +1,16 @@
+name: guestbook-local
+description: Guestbook on local Docker
+runtime:
+  name: nodejs
+  options:
+    packagemanager: npm
+config:
+  port:
+    type: integer
+    description: Host port the Guestbook listens on
+  title:
+    type: string
+    default: Guestbook
+  pulumi:tags:
+    value:
+      pulumi:template: typescript
