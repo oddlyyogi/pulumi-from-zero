@@ -1,6 +1,7 @@
 """The same Guestbook container, written in Python."""
 import pulumi
 import pulumi_docker as docker
+
 image = docker.Image(
     "guestbook-image",
     image_name="guestbook-app:py",
