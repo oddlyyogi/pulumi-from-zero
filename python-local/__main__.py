@@ -2,6 +2,10 @@
 import pulumi
 import pulumi_docker as docker
 
+config = pulumi.Config()
+port = config.require_int("port")
+title = config.get("title") or "Guestbook (Python)"
+
 image = docker.Image(
     "guestbook-image",
     image_name="guestbook-app:py",
@@ -13,12 +17,11 @@ container = docker.Container(
     "guestbook-web",
     name="guestbook-python",
     image=image.image_name,
-    ports=[docker.ContainerPortArgs(internal=8080, external=8082)],
-    envs=["TITLE=Guestbook (Python)"],
+    ports=[docker.ContainerPortArgs(internal=8080, external=port)],
+    envs=[f"TITLE={title}"],
 )
 
-pulumi.export("url", "http://localhost:8082")
-pulumi.export("broken", f"container {container.name}")
+pulumi.export("url", f"http://localhost:{port}")
 pulumi.export(
     "joined", pulumi.Output.concat("container ", container.name)
 )
@@ -39,3 +42,5 @@ pulumi.export(
         lambda d: f"{d['name']} listens on {d['port']}"
     ),
 )
+platform = pulumi.StackReference("organization/guestbook-platform/shared")
+pulumi.export("platformNetwork", platform.require_output("networkName"))

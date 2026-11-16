@@ -2,7 +2,17 @@ import * as pulumi from "@pulumi/pulumi";
 import * as docker from "@pulumi/docker";
 import * as random from "@pulumi/random";
 
-const network = new docker.Network("guestbook-net");
+const config = new pulumi.Config();
+const port = config.requireNumber("port");
+const title = config.get("title") ?? "Guestbook";
+const limits = config.requireObject<{ memoryMb: number }>("limits");
+const configuredToken = config.getSecret("adminToken");
+const stack = pulumi.getStack();
+
+const platform = new pulumi.StackReference(
+  "organization/guestbook-platform/shared",
+);
+const networkName = platform.requireOutput("networkName");
 
 const data = new docker.Volume("guestbook-data");
 
@@ -10,6 +20,8 @@ const adminToken = new random.RandomPassword("admin-token", {
   length: 24,
   special: false,
 });
+
+const tokenValue = configuredToken ?? adminToken.result;
 
 const image = new docker.Image("guestbook-image", {
   imageName: "guestbook-app:v3",
@@ -19,22 +31,25 @@ const image = new docker.Image("guestbook-image", {
 
 const container = new docker.Container("guestbook-web", {
   image: image.imageName,
-  ports: [{ internal: 8080, external: 8081 }],
+  ports: [{ internal: 8080, external: port }],
+  memory: limits.memoryMb,
   envs: [
-    "TITLE=Guestbook with a volume",
-    pulumi.interpolate`ADMIN_TOKEN=${adminToken.result}`,
+    `TITLE=${title}`,
+    pulumi.interpolate`ADMIN_TOKEN=${tokenValue}`,
   ],
-  networksAdvanced: [{ name: network.name }],
+  networksAdvanced: [{ name: networkName }],
   volumes: [{ volumeName: data.name, containerPath: "/data" }],
   labels: [{
+    label: "guestbook.stack",
+    value: stack,
+  }, {
     label: "guestbook.info",
     value: pulumi.jsonStringify({
-      network: network.name,
-      port: 8081,
+      network: networkName,
+      port,
     }),
   }],
 });
-
 
 export const containerName = container.name;
 export const containerId = container.id;
@@ -43,8 +58,8 @@ export const url = container.ports.apply(
 );
 
 export const where =
-  pulumi.interpolate`${container.name} on ${network.name}`;
+  pulumi.interpolate`${container.name} on ${networkName}`;
 export const summary = pulumi
   .all([container.name, image.imageName])
   .apply(([name, img]) => `${name} runs ${img}`);
-export const token = adminToken.result;
+export const token = tokenValue;

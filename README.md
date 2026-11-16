@@ -13,8 +13,8 @@ and a passphrase you choose (`PULUMI_CONFIG_PASSPHRASE`).
 |---|---------|--------|
 | 1 | Install Pulumi and Deploy Your First Stack | [chapters/01-install-pulumi-and-deploy-your-first-stack](chapters/01-install-pulumi-and-deploy-your-first-stack) |
 | 2 | Resources, Inputs and Outputs | [chapters/02-resources-inputs-and-outputs](chapters/02-resources-inputs-and-outputs) |
-| 3 | Projects, Stacks and Config | coming soon |
-| 4 | Deploy to AWS | coming soon |
+| 3 | Projects, Stacks and Config | [chapters/03-projects-stacks-and-config](chapters/03-projects-stacks-and-config) |
+| 4 | Deploy to AWS | [chapters/04-deploy-to-aws](chapters/04-deploy-to-aws) |
 | 5 | Deploy to Azure | coming soon |
 | 6 | Component Resources | coming soon |
 | 7 | State, Import and Refactoring | coming soon |
