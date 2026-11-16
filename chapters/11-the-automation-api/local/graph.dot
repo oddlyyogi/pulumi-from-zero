@@ -1,0 +1,19 @@
+strict digraph {
+    Resource0 [label="urn:pulumi:dev::guestbook-local::docker:index/container:Container::guestbook-web"];
+    Resource0 -> Resource1 [color = "#AA6639"];
+    Resource2 [label="urn:pulumi:dev::guestbook-local::docker:index/image:Image::guestbook-image"];
+    Resource2 -> Resource1 [color = "#AA6639"];
+    Resource2 -> Resource0 [color = "#246C60", label = "image"];
+    Resource3 [label="urn:pulumi:dev::guestbook-local::docker:index/network:Network::guestbook-net"];
+    Resource3 -> Resource1 [color = "#AA6639"];
+    Resource3 -> Resource0 [color = "#246C60", label = "labels, networksAdvanced"];
+    Resource4 [label="urn:pulumi:dev::guestbook-local::docker:index/volume:Volume::guestbook-data"];
+    Resource4 -> Resource1 [color = "#AA6639"];
+    Resource4 -> Resource0 [color = "#246C60", label = "volumes"];
+    Resource5 [label="urn:pulumi:dev::guestbook-local::pulumi:providers:docker::default_5_3_0"];
+    Resource6 [label="urn:pulumi:dev::guestbook-local::pulumi:providers:random::default_4_21_6"];
+    Resource1 [label="urn:pulumi:dev::guestbook-local::pulumi:pulumi:Stack::guestbook-local-dev"];
+    Resource7 [label="urn:pulumi:dev::guestbook-local::random:index/randomPassword:RandomPassword::admin-token"];
+    Resource7 -> Resource1 [color = "#AA6639"];
+    Resource7 -> Resource0 [color = "#246C60", label = "envs"];
+}

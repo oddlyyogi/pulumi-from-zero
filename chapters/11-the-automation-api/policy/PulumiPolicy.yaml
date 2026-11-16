@@ -1,0 +1,2 @@
+description: Guard rails for the Guestbook on Docker.
+runtime: nodejs
