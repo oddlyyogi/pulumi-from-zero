@@ -45,6 +45,15 @@ const server = http.createServer((req, res) => {
       json(res, 201, entry);
     });
   }
+  if (req.url === "/api/messages" && req.method === "DELETE") {
+    const token = process.env.ADMIN_TOKEN;
+    if (!token || req.headers["x-admin-token"] !== token) {
+      return json(res, 403, { error: "admin token required" });
+    }
+    const deleted = load().length;
+    save([]);
+    return json(res, 200, { deleted });
+  }
   if (req.url === "/config.js") {
     res.writeHead(200, { "content-type": "text/javascript" });
     return res.end(`window.TITLE = ${JSON.stringify(TITLE)};`);

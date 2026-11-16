@@ -12,7 +12,7 @@ and a passphrase you choose (`PULUMI_CONFIG_PASSPHRASE`).
 | # | Chapter | Folder |
 |---|---------|--------|
 | 1 | Install Pulumi and Deploy Your First Stack | [chapters/01-install-pulumi-and-deploy-your-first-stack](chapters/01-install-pulumi-and-deploy-your-first-stack) |
-| 2 | Resources, Inputs and Outputs | coming soon |
+| 2 | Resources, Inputs and Outputs | [chapters/02-resources-inputs-and-outputs](chapters/02-resources-inputs-and-outputs) |
 | 3 | Projects, Stacks and Config | coming soon |
 | 4 | Deploy to AWS | coming soon |
 | 5 | Deploy to Azure | coming soon |
