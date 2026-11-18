@@ -19,7 +19,10 @@ const account = new storage.StorageAccount("guestbook", {
   kind: storage.Kind.StorageV2,
   allowBlobPublicAccess: false,
   minimumTlsVersion: storage.MinimumTlsVersion.TLS1_2,
-  tags: { project: "guestbook", data: "messages" },
+  tags: {
+    project: "guestbook", data: "messages",
+    deployedBy: "pulumi-deployments",
+  },
 });
 
 new storage.Table("messages", {
