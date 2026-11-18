@@ -1,0 +1,5 @@
+config:
+  guestbook-azure:resourceGroup: rg-pulumi-esc
+  azure-native:location: westus2
+environment:
+  - guestbook/azure
