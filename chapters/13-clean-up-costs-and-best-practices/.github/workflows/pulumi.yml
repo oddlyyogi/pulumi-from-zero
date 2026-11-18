@@ -1,0 +1,41 @@
+name: Pulumi
+
+on:
+  workflow_dispatch: # manual only: its OIDC trust was removed
+
+permissions:
+  id-token: write
+  contents: read
+  pull-requests: write
+
+jobs:
+  azure:
+    runs-on: ubuntu-latest
+    concurrency: guestbook-azure-ci
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: azure/package-lock.json
+      - run: npm ci
+        working-directory: azure
+      - uses: pulumi/auth-actions@v2
+        with:
+          organization: ${{ secrets.PULUMI_ORG }}
+          requested-token-type: urn:pulumi:token-type:access_token:personal
+          scope: user:${{ secrets.PULUMI_USER }}
+      - uses: pulumi/actions@v7
+        if: github.event_name == 'pull_request'
+        with:
+          command: preview
+          stack-name: ${{ secrets.PULUMI_ORG }}/guestbook-azure/ci
+          work-dir: azure
+          comment-on-pr: true
+      - uses: pulumi/actions@v7
+        if: github.event_name == 'push'
+        with:
+          command: up
+          stack-name: ${{ secrets.PULUMI_ORG }}/guestbook-azure/ci
+          work-dir: azure

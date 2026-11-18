@@ -22,7 +22,7 @@ and a passphrase you choose (`PULUMI_CONFIG_PASSPHRASE`).
 | 9 | Test Infrastructure Code | [chapters/09-test-infrastructure-code](chapters/09-test-infrastructure-code) |
 | 10 | Kubernetes with Pulumi | [chapters/10-kubernetes-with-pulumi](chapters/10-kubernetes-with-pulumi) |
 | 11 | The Automation API | [chapters/11-the-automation-api](chapters/11-the-automation-api) |
-| 12 | CI/CD: GitHub Actions and Pulumi Deployments | coming soon |
+| 12 | CI/CD with GitHub Actions and Pulumi Deployments | [chapters/12-ci-cd-with-github-actions-and-pulumi-deployments](chapters/12-ci-cd-with-github-actions-and-pulumi-deployments) |
 | 13 | Clean Up, Costs and Best Practices | [chapters/13-clean-up-costs-and-best-practices](chapters/13-clean-up-costs-and-best-practices) |
 
 ## Versions

@@ -1,0 +1,6 @@
+encryptionsalt: v1:xmiCOXsNGfc=:v1:EKMDnjPMAsuXEsUi:lcyTF+F78gfVCUTuUbj+OYJVshA/Rw==
+config:
+  guestbook-local:port: "8081"
+  guestbook-local:title: Guestbook (dev)
+  guestbook-local:limits:
+    memoryMb: 128

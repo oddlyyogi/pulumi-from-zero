@@ -4,10 +4,14 @@ import * as storage from "@pulumi/azure-native/storage";
 import * as web from "@pulumi/azure-native/web";
 
 const stack = pulumi.getStack();
-const rg = new resources.ResourceGroup("rg", {
-  resourceGroupName: `rg-pulumi-guestbook-${stack}`,
-  tags: { project: "guestbook", "managed-by": "pulumi" },
-});
+const config = new pulumi.Config();
+const existingGroup = config.get("resourceGroup");
+const rg = existingGroup
+  ? { name: pulumi.output(existingGroup) }
+  : new resources.ResourceGroup("rg", {
+      resourceGroupName: `rg-pulumi-guestbook-${stack}`,
+      tags: { project: "guestbook", "managed-by": "pulumi" },
+    });
 
 const account = new storage.StorageAccount("guestbook", {
   resourceGroupName: rg.name,
@@ -15,7 +19,10 @@ const account = new storage.StorageAccount("guestbook", {
   kind: storage.Kind.StorageV2,
   allowBlobPublicAccess: false,
   minimumTlsVersion: storage.MinimumTlsVersion.TLS1_2,
-  tags: { project: "guestbook", data: "messages" },
+  tags: {
+    project: "guestbook", data: "messages",
+    deployedBy: "pulumi-deployments",
+  },
 });
 
 new storage.Table("messages", {

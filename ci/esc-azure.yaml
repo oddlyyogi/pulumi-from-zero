@@ -1,0 +1,18 @@
+values:
+  ids:
+    clientId: set-with-pulumi-env-set
+    tenantId: set-with-pulumi-env-set
+    subscriptionId: set-with-pulumi-env-set
+  azure:
+    login:
+      fn::open::azure-login:
+        clientId: ${ids.clientId}
+        tenantId: ${ids.tenantId}
+        subscriptionId: ${ids.subscriptionId}
+        oidc: true
+  pulumiConfig:
+    azure-native:useOidc: true
+    azure-native:clientId: ${azure.login.clientId}
+    azure-native:tenantId: ${azure.login.tenantId}
+    azure-native:subscriptionId: ${azure.login.subscriptionId}
+    azure-native:oidcToken: ${azure.login.oidc.token}

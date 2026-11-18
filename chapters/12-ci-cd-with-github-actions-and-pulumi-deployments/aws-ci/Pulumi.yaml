@@ -1,0 +1,6 @@
+name: guestbook-aws-ci
+description: Lets GitHub Actions deploy to AWS without stored keys
+runtime:
+  name: nodejs
+  options:
+    packagemanager: npm
