@@ -6,7 +6,7 @@
       "userLogin": "PULUMI_USER",
       "rules": {
         "aud": "urn:pulumi:org:ORG_NAME",
-        "sub": "repo:oddlyyogi/pulumi-from-zero:*"
+        "sub": "repo:oddlyyogi@346381989/pulumi-from-zero@1459388941:*"
       }
     }
   ]
