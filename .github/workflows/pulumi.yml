@@ -25,6 +25,15 @@ jobs:
           cache-dependency-path: azure/package-lock.json
       - run: npm ci
         working-directory: azure
+      - name: Debug claims (probe only)
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const t = await core.getIDToken(`urn:pulumi:org:${process.env.ORG}`);
+            const c = JSON.parse(Buffer.from(t.split('.')[1], 'base64url').toString());
+            core.info(JSON.stringify({ sub: c.sub, aud: c.aud, iss: c.iss, repo: c.repository, event: c.event_name }));
+        env:
+          ORG: ${{ secrets.PULUMI_ORG }}
       - uses: pulumi/auth-actions@v2
         with:
           organization: ${{ secrets.PULUMI_ORG }}
