@@ -1,0 +1,13 @@
+{
+  "policies": [
+    {
+      "decision": "allow",
+      "tokenType": "personal",
+      "userLogin": "PULUMI_USER",
+      "rules": {
+        "aud": "urn:pulumi:org:ORG_NAME",
+        "sub": "repo:oddlyyogi/pulumi-from-zero:*"
+      }
+    }
+  ]
+}
